@@ -9,6 +9,7 @@
 
 html {
   font-size: 13px;
+  color: #000;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
 ul, ol {
@@ -44,4 +46,9 @@ h1, h2, h3 {
   min-width: 1280px;
   margin: 0 auto;
   padding: 0 10px;
+}
+
+/* 여백 공통 */
+.mt20 {
+  margin-top: 20px !important;
 }
