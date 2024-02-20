@@ -10,7 +10,7 @@ const LoginPage = () => {
       <Helmet>
         <title>{t('로그인')}</title>
       </Helmet>
-      <LoginContainer />
+        <LoginContainer />
     </>
   );
 };
