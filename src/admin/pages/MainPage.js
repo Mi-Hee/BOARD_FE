@@ -5,14 +5,13 @@ import AdminOnlyContainer from '../../commons/containers/AdminOnlyContainer';
 
 const MainPage = () => {
   const { t } = useTranslation();
-
   return (
     <>
       <Helmet>
         <title>{t('사이트_관리')}</title>
       </Helmet>
       <AdminOnlyContainer>
-        <h1>관리자페이지</h1>
+        <h1>관리자페이지....</h1>
       </AdminOnlyContainer>
     </>
   );

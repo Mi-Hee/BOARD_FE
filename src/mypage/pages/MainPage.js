@@ -3,9 +3,8 @@ import MemberOnlyContainer from '../../commons/containers/MemberOnlyContainer';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
-const Mainpage = () => {
+const MainPage = () => {
   const { t } = useTranslation();
-
   return (
     <>
       <Helmet>
@@ -18,4 +17,4 @@ const Mainpage = () => {
   );
 };
 
-export default React.memo(Mainpage);
+export default React.memo(MainPage);

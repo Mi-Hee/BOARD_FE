@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UserContext from '../../member/modules/UserContext';
-import { useNavigate } from '../../../node_modules/react-router-dom/dist/index';
 
 const AdminOnlyContainer = ({ children }) => {
   const {

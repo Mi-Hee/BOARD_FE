@@ -10,7 +10,7 @@ const FooterBox = styled.footer`
 const Footer = () => {
   return (
     <FooterBox>
-      <div className="layout-width">푸터</div>
+      <div className="layout-width">푸터..</div>
     </FooterBox>
   );
 };

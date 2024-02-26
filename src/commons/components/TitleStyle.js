@@ -17,5 +17,5 @@ export const SubTitle = styled.h2`
   line-height: 1;
   font-weight: 700;
   margin-bottom: 15px;
-  text-align: ${({ align }) => align || 'left'};
+  text-align: ${({align}) => align || 'left'};
 `;

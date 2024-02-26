@@ -4,9 +4,8 @@ import LoginContainer from '../../member/containers/LoginContainer';
 
 /**
  * 회원 전용페이지 컨테이너
- * - 미로그인 상태 -> 로그인 화면
- * - 로그인 상태 -> 원래 페이지
- * @param {} param0
+ *  - 미로그인 상태 -> 로그인 화면
+ *  - 로그인 상태 -> 원래 페이지
  */
 const MemberOnlyContainer = ({ children }) => {
   const {
