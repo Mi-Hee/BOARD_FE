@@ -6,7 +6,23 @@ import Header from '../../outlines/admin/Header';
 import Side from '../../outlines/admin/Side';
 import SubMenu from '../../outlines/admin/SubMenu';
 
-const ContentBox = styled.main``;
+const ContentBox = styled.main`
+  display: flex;
+
+  background: #f8f8f8;
+
+  min-height: 700px;
+
+  aside {
+    width: 220px;
+    background: #d5d5d5;
+  }
+
+  section.main_content {
+    flex-glow: 1;
+    padding: 50px;
+  }
+`;
 
 const MainLayout = () => {
   return (
@@ -14,7 +30,7 @@ const MainLayout = () => {
       <Header />
       <ContentBox>
         <Side />
-        <section>
+        <section className="main_content">
           <SubMenu />
           <Outlet />
         </section>

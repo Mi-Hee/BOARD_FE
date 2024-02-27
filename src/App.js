@@ -18,6 +18,25 @@ const MyMainPage = loadable(() => import('./mypage/pages/MainPage')); // 마이�
 
 /* 관리자 페이지 S */
 const AdminMainPage = loadable(() => import('./admin/pages/MainPage')); // 관리자 메인페이지
+
+/* 기본 설정 S */
+const BasicConfigPage = loadable(() =>
+  import('./admin/config/pages/BasicConfigPage'),
+);
+/* 기본 설정 E */
+
+/* 회원 관리 S */
+const MemberListPage = loadable(() =>
+  import('./admin/member/pages/MemberListPage'),
+);
+/* 회원 관리 E */
+
+/* 게시판 관리 S */
+const BoardListPage = loadable(() =>
+  import('./admin/board/pages/BoardListPage'),
+);
+/* 게시판 관리 E */
+
 /* 관리자 페이지 E */
 
 const App = () => {
@@ -45,6 +64,24 @@ const App = () => {
       {/* 관리자 페이지 S */}
       <Route path="/admin" element={<AdminMainLayout />}>
         <Route index element={<AdminMainPage />} />
+
+        {/* 기본 설정 S */}
+        <Route path="config/">
+          <Route index element={<BasicConfigPage />} />
+        </Route>
+        {/* 기본 설정 E */}
+
+        {/* 회원 관리 S */}
+        <Route path="member/">
+          <Route index element={<MemberListPage />} />
+        </Route>
+        {/* 회원 관리 E */}
+
+        {/* 게시판 관리 S */}
+        <Route path="board/">
+          <Route index element={<BoardListPage />} />
+        </Route>
+        {/* 게시판 관리 E */}
 
         <Route path="*" element={<NotFound />} />
       </Route>
