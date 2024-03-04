@@ -65,13 +65,26 @@ export const fileInfo = (search, onSuccess, onFailure) => {
   let url = '/file';
   if (typeof search === 'number') {
     // 단일 조회
-    url += `/info/${search}`;
+    url += `/${search}`;
     search = null;
   }
 
   apiRequest(url, 'GET', search)
-    .then((res) => {})
+    .then((res) => {
+      if (res.data.success) {
+        if (typeof onSuccess === 'function') onSuccess(res.data.data);
+      } else {
+        if (typeof onFailure === 'function') onFailure(res.data);
+      }
+    })
     .catch((err) => {
       if (typeof onFailure === 'function') onFailure(err);
     });
+};
+
+export const fileDownload = (seq) => {
+  const url = process.env.REACT_APP_API_URL + `/download/${seq}`;
+  const aLink = document.createElement('a');
+  aLink.href = url;
+  aLink.click();
 };
