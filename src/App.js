@@ -19,21 +19,28 @@ const MyMainPage = loadable(() => import('./mypage/pages/MainPage')); // 마이�
 /* 관리자 페이지 S */
 const AdminMainPage = loadable(() => import('./admin/pages/MainPage')); // 관리자 메인페이지
 
-/* 기본 설정 S */
+/* 기본설정 S */
 const BasicConfigPage = loadable(() =>
   import('./admin/config/pages/BasicConfigPage'),
 );
-/* 기본 설정 E */
 
-/* 회원 관리 S */
+/* 기본설정 E */
+
+/* 회원관리 S */
 const MemberListPage = loadable(() =>
   import('./admin/member/pages/MemberListPage'),
 );
-/* 회원 관리 E */
+
+/* 회원관리 E */
 
 /* 게시판 관리 S */
 const BoardListPage = loadable(() =>
   import('./admin/board/pages/BoardListPage'),
+);
+
+const BoardAddPage = loadable(() => import('./admin/board/pages/BoardAddPage'));
+const BoardEditPage = loadable(() =>
+  import('./admin/board/pages/BoardEditPage'),
 );
 /* 게시판 관리 E */
 
@@ -69,7 +76,7 @@ const App = () => {
         <Route path="config/">
           <Route index element={<BasicConfigPage />} />
         </Route>
-        {/* 기본 설정 E */}
+        {/* 기본 설정 S */}
 
         {/* 회원 관리 S */}
         <Route path="member/">
@@ -80,6 +87,8 @@ const App = () => {
         {/* 게시판 관리 S */}
         <Route path="board/">
           <Route index element={<BoardListPage />} />
+          <Route path="add" element={<BoardAddPage />} />
+          <Route path="edit/:bid" element={<BoardEditPage />} />
         </Route>
         {/* 게시판 관리 E */}
 

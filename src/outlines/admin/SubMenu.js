@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getSubMenus } from '../../admin/menus';
 import classNames from 'classnames';
@@ -25,12 +25,13 @@ const NavBox = styled.nav`
 `;
 
 const SubMenu = () => {
-  const [items, setItems] = useState(null);
+  const location = useLocation();
+  // console.log(location);
+  const pathName = location.pathname;
+  const items = useMemo(() => getSubMenus(), [pathName]);
   const { t } = useTranslation();
-
-  useEffect(() => {
-    setItems(getSubMenus());
-  }, []);
+  // console.log('item', items, getSubMenus);
+  // console.log(items);
 
   return (
     items &&
